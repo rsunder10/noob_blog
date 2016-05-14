@@ -1,2 +1,33 @@
+$navbar-default-bg: #3C006C;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  color:white;
+  line-spacing:-3px;
+  font-size:1.7em;
+  text-transform:uppercase;
+  float :left;
+  font-weight:bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color:#fff;
+}
+.center {
+  text-align: center;
+  text-transform:uppercase;
+}
+.jumbotron{
+  background-image: asset-url('rails.jpg');
+  background-size:cover;
+  height:300px;
+}
+
+.jumbotron>h1{
+  text-transform:uppercase;
+  font-weight:bold;
+  color:white;
+}
+

@@ -1,21 +1,33 @@
+
+
 <% if @article.errors.any? %>
-  <h3>Following Error Occured</h3>
-  <ul>
+<div class="panel panel-danger">
+  <div class="panel-body">
+    <%="Error".pluralize(@article.errors.count) %>
+  </div>
+  <div class="panel-footer">  
+  <ol>
   <% @article.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
   <% end %>
-  </ul>
-<% end %>
+  </ol>
+  </div>
+</div>
 
-<%= form_for @article do |f| %>
+<% end %>
+<div class="row">
+<div class="col-md-6">
+<%= bootstrap_form_for(@article) do |f| %>
   <p>
-  <%=f.label :title %><br/>
+ 
   <%=f.text_field :title %>
   </p>
   <p>
-    <%=f.label :description %><br/>
     <%=f.text_area :description %>
   </p>
-  <%=f.submit %>
+  <%=f.submit class: 'btn btn-primary'%>
+</div>
+</div>
 
+<%= link_to '[Back to Article Listing]',articles_path(@article) %>
   <% end %>

@@ -1,19 +1,26 @@
-<h1>All Articles</h1>
 
-<%= link_to 'Create New Article', new_article_path %>
-<table>
+<div class="center">
+<h1>All Articles</h1>
+</div>
+
+<div class="center">
+<%= link_to 'Create New Article', new_article_path, class: 'btn btn-primary btn-info' %>
+</div>
+<br/>
+<table class="table table-hover">
 
 <tr>
   <th>Title</th>
   <th>Description</th>
+  <th>Action</th>
 </tr>
 <% @article.each do |article| %>
   <tr>
   <td><%=article.title%></td>
   <td><%=article.description%></td>
-  <td><%= link_to 'Edit' ,edit_article_path(article) %></td>
-  <td><%= link_to 'View' ,article_path(article) %></td>
-  <td><%= link_to 'Delete' , article_path(article) , method: :delete ,data: {confirm: "Are You Sure ?" } %></td>
+  <td><%= link_to 'Edit' ,edit_article_path(article) , class: 'btn btn-danger btn-info'%></td>
+  <td><%= link_to 'View' ,article_path(article), class: 'btn btn-primary btn-small' %></td>
+  <td><%= link_to 'Delete' , article_path(article) , method: :delete ,data: {confirm: "Are You Sure ?" } , class: 'btn btn-danger btn-small'%></td>
   </tr>
 <% end %>
   
